@@ -5,6 +5,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Root from "./layout/Root";
 import store from "./store/store.js";
 import Nutrition from "./features/Nutrition.jsx";
+import Home from "./features/Home.jsx";
 import NutritionDetails from "./features/NutritionDetails.jsx";
 import "./index.css";
 
@@ -13,7 +14,7 @@ const router = createBrowserRouter([
     path: "/",
     element: <Root />,
     children: [
-      { path: "", element: <Nutrition /> },
+      { path: "", element: <Home /> },
       { path: "nutrition", element: <Nutrition /> },
       { path: "nutrition/:id", element: <NutritionDetails /> },
     ],

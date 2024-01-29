@@ -4,7 +4,7 @@ export default function Navbar() {
     <nav>
       <h1>Nutrition Fact</h1>
       <li>
-        <NavLink to="/"> Home </NavLink>
+        <NavLink to="/nutrition"> Home </NavLink>
       </li>
     </nav>
   );
