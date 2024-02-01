@@ -1,0 +1,22 @@
+.top {
+  box-sizing: border-box;
+  width: 99vw;
+  display: flex;
+  text-decoration: none;
+  justify-content: space-evenly;
+  background-color: #c8e4df;
+  align-items: flex-end;
+  font-family: "Josefin Sans", sans-serif;
+
+  .navbarmenu {
+    box-sizing: border-box;
+    width: 30vw;
+    display: flex;
+    list-style: none;
+    justify-content: space-evenly;
+    color: black;
+  }
+  .navbarmenu li {
+    font-family: Georgia, "Times New Roman", Times, serif;
+  }
+}

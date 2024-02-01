@@ -1,6 +1,9 @@
 export default function FoodNutrients({ foodNutrients }) {
-  return foodNutrients.map((item) => (
-    <div>
+  if (!foodNutrients) {
+    return <p>No nutrient info is available</p>;
+  }
+  return foodNutrients.map((item, index) => (
+    <div key={index}>
       <p>
         {item.name}
         <span></span> {item.amount}
