@@ -7,6 +7,16 @@
 }
 .home-intro {
   width: 40vw;
-  border: 2px solid blue;
   text-align: center;
+  border: 2px solid black;
+}
+.home-search {
+  width: 30vw;
+  display: inline-block;
+  text-align: left;
+  margin-left: 3rem;
+  border: 2px solid yellow;
+}
+.searchText {
+  border: 2px solid blue;
 }
