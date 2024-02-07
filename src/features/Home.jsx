@@ -15,11 +15,10 @@ export default function Home() {
         </section>
       </main>
       <section className="home-search">
-        <h1>Search: </h1>
         <input
           className="searchText"
           type="text"
-          placeholder="Enter ingredient here..."
+          placeholder="Search ingredient here..."
         ></input>
       </section>
     </>
