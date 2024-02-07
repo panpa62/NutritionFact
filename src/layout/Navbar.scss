@@ -1,20 +1,27 @@
 .top {
   box-sizing: border-box;
-  width: 99vw;
+  width: 98vw;
+  height: 10vw;
   display: flex;
-  text-decoration: none;
   justify-content: space-evenly;
   background-color: #c8e4df;
-  align-items: flex-end;
+  align-items: center;
   font-family: "Josefin Sans", sans-serif;
+  font-size: 24px;
+
+  a {
+    font-size: 16px;
+    color: #646cff;
+    text-decoration: inherit;
+  }
 
   .navbarmenu {
     box-sizing: border-box;
     width: 30vw;
     display: flex;
-    list-style: none;
     justify-content: space-evenly;
-    color: black;
+    align-items: flex-end;
+    list-style: none;
   }
   .navbarmenu li {
     font-family: Georgia, "Times New Roman", Times, serif;

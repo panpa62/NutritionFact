@@ -5,7 +5,7 @@ export default function Root() {
   return (
     <>
       <header>
-        <Navbar to="/">Home Page</Navbar>
+        <Navbar to="/home">Home Page</Navbar>
       </header>
       <main>
         <Outlet />
