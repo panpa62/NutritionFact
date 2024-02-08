@@ -1,7 +1,12 @@
 import "./Home.scss";
+import { useGetSearchQuery } from "../store/nutritionSlice";
 
 export default function Home() {
-  return (
+  const { data, isLoading, isError } = useGetSearchQuery();
+
+  return isLoading ? (
+    <h1>Fetching data ...</h1>
+  ) : (
     <>
       <main className="home-main">
         <section className="home-intro">
