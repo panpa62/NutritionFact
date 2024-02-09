@@ -20,11 +20,17 @@ export default function Home() {
         </section>
       </main>
       <section className="home-search">
-        <input
-          className="searchText"
-          type="text"
-          placeholder="Search ingredient here..."
-        ></input>
+        <form onSubmit={handlesubmit}>
+          <label htmlFor="search"></label>
+          <input
+            className="searchText"
+            id="search"
+            type="text"
+            value={search}
+            onChange={(e) => setContent(e.target.value)}
+            placeholder="Search ingredient here..."
+          ></input>
+        </form>
       </section>
     </>
   );
