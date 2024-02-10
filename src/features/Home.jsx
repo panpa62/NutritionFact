@@ -1,11 +1,21 @@
+import { useState } from "react";
+//import { useNavigate } from "react-router-dom";
+import { useGetIngredientQuery } from "../store/nutritionSlice";
 import "./Home.scss";
-import { useGetSearchQuery } from "../store/nutritionSlice";
 
 export default function Home() {
-  const { data, isLoading, isError } = useGetSearchQuery();
+  //const navigate = useNavigate();
+  const [search, setSearch] = useState("");
 
+  const { data: foods, isLoading } = useGetIngredientQuery(search);
+  //console.log(foods);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log(search);
+  };
   return isLoading ? (
-    <h1>Fetching data ...</h1>
+    <h1>Fetching Data ...</h1>
   ) : (
     <>
       <main className="home-main">
@@ -20,18 +30,29 @@ export default function Home() {
         </section>
       </main>
       <section className="home-search">
-        <form onSubmit={handlesubmit}>
+        <form onSubmit={handleSubmit}>
           <label htmlFor="search"></label>
           <input
             className="searchText"
             id="search"
             type="text"
             value={search}
-            onChange={(e) => setContent(e.target.value)}
+            onChange={(e) => setSearch(e.target.value)}
             placeholder="Search ingredient here..."
           ></input>
+          <button>Search</button>
         </form>
       </section>
+      {/*<section>
+        <ul className="search-grid">
+          {foods.map((item) => (
+            <li key={item.fdcId} className="search-card">
+              <h3>{item.description}</h3>
+            </li>
+          ))}
+        </ul>
+      </section>
+          */}
     </>
   );
 }

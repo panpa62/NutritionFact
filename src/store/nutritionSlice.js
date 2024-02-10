@@ -5,10 +5,10 @@ const nutritionApi = api.injectEndpoints({
     getNutrition: builder.query({
       query: () => "list?api_key=0mcdtqHvYNIdqbOPdaNzV9OAkFTCHG8XggMCC5EC",
     }),
-    getSearch: builder.query({
+    getIngredient: builder.query({
       query: (ingredient) =>
         `search?api_key=0mcdtqHvYNIdqbOPdaNzV9OAkFTCHG8XggMCC5EC&query=${ingredient}`,
     }),
   }),
 });
-export const { useGetNutritionQuery, useGetSearchQuery } = nutritionApi;
+export const { useGetNutritionQuery, useGetIngredientQuery } = nutritionApi;
