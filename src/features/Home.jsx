@@ -1,22 +1,17 @@
 import { useState } from "react";
-//import { useNavigate } from "react-router-dom";
-import { useGetIngredientQuery } from "../store/nutritionSlice";
 import "./Home.scss";
+//import SearchResult from "./SearchResult";
+import { useGetIngredientQuery } from "../store/nutritionSlice";
 
 export default function Home() {
-  //const navigate = useNavigate();
   const [search, setSearch] = useState("");
-
-  const { data: foods, isLoading } = useGetIngredientQuery(search);
-  //console.log(foods);
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(search);
   };
-  return isLoading ? (
-    <h1>Fetching Data ...</h1>
-  ) : (
+  const { data, isLoading } = useGetIngredientQuery(search);
+  console.log(data.foods);
+  return (
     <>
       <main className="home-main">
         <section className="home-intro">
@@ -43,16 +38,15 @@ export default function Home() {
           <button>Search</button>
         </form>
       </section>
-      {/*<section>
+      <section>
         <ul className="search-grid">
-          {foods.map((item) => (
+          {data.foods.map((item) => (
             <li key={item.fdcId} className="search-card">
               <h3>{item.description}</h3>
             </li>
           ))}
         </ul>
       </section>
-          */}
     </>
   );
 }
