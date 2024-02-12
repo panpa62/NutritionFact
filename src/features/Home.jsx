@@ -38,7 +38,9 @@ export default function Home() {
             onChange={handleInputChange}
             placeholder="Search ingredient here..."
           ></input>
-          <button onClick={handleSubmit}>Search</button>
+          <button type="submit" onClick={handleSubmit}>
+            Search
+          </button>
         </form>
       </section>
 

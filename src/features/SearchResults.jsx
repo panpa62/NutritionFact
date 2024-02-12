@@ -2,8 +2,12 @@ import { useGetIngredientQuery } from "../store/nutritionSlice";
 
 export default function SearchResults(searchWords) {
   console.log(searchWords.searchWords);
-  const { data, isLoading } = useGetIngredientQuery(searchWords.searchWords);
-  console.log(data);
+  const { data, isLoading, isError } = useGetIngredientQuery(
+    searchWords.searchWords
+  );
+  console.log(data.foods);
+  console.log("There is an error message: ");
+  console.log(data.isError);
 
   return isLoading ? (
     <div>Loading ...</div>
