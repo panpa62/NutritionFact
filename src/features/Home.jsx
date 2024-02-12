@@ -47,10 +47,10 @@ export default function Home() {
       {searchSubmitted && (
         <div>
           {searchWords ? (
-            <p>
+            <div>
               <b>Showing results for: {searchWords}</b>
               <SearchResults searchWords={searchWords} />
-            </p>
+            </div>
           ) : (
             <p>
               <b>Please search ingredient provided.</b>
