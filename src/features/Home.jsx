@@ -1,16 +1,19 @@
 import { useState } from "react";
+import SearchResults from "./SearchResults";
 import "./Home.scss";
-//import SearchResult from "./SearchResult";
-import { useGetIngredientQuery } from "../store/nutritionSlice";
 
 export default function Home() {
-  const [search, setSearch] = useState("");
+  const [searchWords, setSearchWords] = useState("");
+  const [searchSubmitted, setSearchSubmitted] = useState(false);
+
+  const handleInputChange = async (e) => {
+    setSearchWords(e.target.value);
+  };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(search);
+    setSearchSubmitted(true);
   };
-  const { data, isLoading } = useGetIngredientQuery(search);
-  console.log(data.foods);
+
   return (
     <>
       <main className="home-main">
@@ -25,28 +28,34 @@ export default function Home() {
         </section>
       </main>
       <section className="home-search">
-        <form onSubmit={handleSubmit}>
+        <form>
           <label htmlFor="search"></label>
           <input
             className="searchText"
             id="search"
             type="text"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
+            value={searchWords}
+            onChange={handleInputChange}
             placeholder="Search ingredient here..."
           ></input>
-          <button>Search</button>
+          <button onClick={handleSubmit}>Search</button>
         </form>
       </section>
-      <section>
-        <ul className="search-grid">
-          {data.foods.map((item) => (
-            <li key={item.fdcId} className="search-card">
-              <h3>{item.description}</h3>
-            </li>
-          ))}
-        </ul>
-      </section>
+
+      {searchSubmitted && (
+        <div>
+          {searchWords ? (
+            <p>
+              <b>Showing results for: {searchWords}</b>
+              <SearchResults searchWords={searchWords} />
+            </p>
+          ) : (
+            <p>
+              <b>Please search ingredient provided.</b>
+            </p>
+          )}
+        </div>
+      )}
     </>
   );
 }

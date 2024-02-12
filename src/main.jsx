@@ -7,7 +7,6 @@ import store from "./store/store.js";
 import Nutrition from "./features/Nutrition.jsx";
 import Home from "./features/Home.jsx";
 import NutritionDetails from "./features/NutritionDetails.jsx";
-//import "./index.css";
 
 const router = createBrowserRouter([
   {
