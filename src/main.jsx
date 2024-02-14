@@ -7,6 +7,7 @@ import store from "./store/store.js";
 import Nutrition from "./features/nutrientList/Nutrition.jsx";
 import Home from "./features/home/Home.jsx";
 import NutritionDetails from "./features/nutrientList/NutritionDetails.jsx";
+import { SearchedIngredientDetails } from "./features/searchFunction/SearchedIngredientDetails.jsx";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
       { path: "", element: <Home /> },
       { path: "nutrition", element: <Nutrition /> },
       { path: "nutrition/:id", element: <NutritionDetails /> },
+      {
+        path: "searchedIngredient/:id",
+        element: <SearchedIngredientDetails />,
+      },
     ],
   },
 ]);

@@ -1,10 +1,17 @@
 import { useGetIngredientQuery } from "../../store/nutritionSlice";
+import { SearchedIngredientDetails } from "./SearchedIngredientDetails";
+import { useState } from "react";
 import "../home/home.scss";
+import { Link } from "react-router-dom";
 
 export default function SearchResults(searchWords) {
   const searchKey = searchWords.searchWords;
+  const [searchInput, setSearchInput] = useState();
   const { data, isLoading } = useGetIngredientQuery(searchKey);
   console.log(data);
+  const handleClick = () => {
+    setSearchInput(true);
+  };
   return isLoading ? (
     <div>Loading ...</div>
   ) : (
@@ -14,15 +21,11 @@ export default function SearchResults(searchWords) {
           <li key={item.fdcId} className="search-card">
             <h3>{item.description}</h3>
             <h4>{item.foodCategory}</h4>
-            <h4>
-              {item.foodNutrients.map((nutrient) => (
-                <div>
-                  <p>Nutrient Name: {nutrient.nutrientName}</p>
-                  <p>Unit: {nutrient.unitName}</p>
-                  <p>Value: {nutrient.value}</p>
-                </div>
-              ))}
-            </h4>
+            <Link to={`searchedIngredient/${item.fdcId}`}>
+              <button type="button" onClick={handleClick}>
+                Details
+              </button>
+            </Link>
           </li>
         ))}
       </ul>
