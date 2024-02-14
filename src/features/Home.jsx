@@ -19,11 +19,10 @@ export default function Home() {
       <main className="home-main">
         <section className="home-intro">
           <h4>
-            "Welcome to the Nutrition Facts website. You can explore nutritional
-            information by either navigating to the 'Nutrition' tab or by
-            searching for specific foods using the search box. Simply enter the
-            name of the food, for example, 'broccoli', into the search box, and
-            you'll receive the nutritional facts directly on the same page."
+            "Welcome to the Nutrition Facts website. Discover nutritional
+            information by navigating to the Nutrition tab or searching for
+            specific ingredients using the search box. You'll find detailed
+            nutritional facts right here on this page."
           </h4>
         </section>
       </main>
@@ -45,7 +44,7 @@ export default function Home() {
       </section>
 
       {searchSubmitted && (
-        <div>
+        <section className="searchResultSection">
           {searchWords ? (
             <div>
               <b>Showing results for: {searchWords}</b>
@@ -53,10 +52,10 @@ export default function Home() {
             </div>
           ) : (
             <p>
-              <b>Please search ingredient provided.</b>
+              <b>Please provide ingredient</b>
             </p>
           )}
-        </div>
+        </section>
       )}
     </>
   );

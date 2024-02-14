@@ -1,4 +1,5 @@
 import { useGetIngredientQuery } from "../store/nutritionSlice";
+import "./Home.scss";
 
 export default function SearchResults(searchWords) {
   const searchKey = searchWords.searchWords;
