@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import "./Navbar.scss";
+import "./navbar.scss";
 
 export default function Navbar() {
   return (
@@ -11,6 +11,9 @@ export default function Navbar() {
         </li>
         <li>
           <NavLink to="/nutrition">Nutrition </NavLink>
+        </li>
+        <li>
+          <NavLink to="/resources">Resources </NavLink>
         </li>
       </menu>
     </nav>

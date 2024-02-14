@@ -4,13 +4,10 @@ import "./searchIngredient.scss";
 
 export function SearchedIngredientDetails() {
   const id = useParams();
-  console.log(id);
   const { data, isLoading } = useGetIngredientQuery(id.id);
-  console.log(data);
   const ingredient = data.foods[0];
-  console.log(ingredient);
   return isLoading ? (
-    <div>Loading ...</div>
+    <div>Just a moment ...</div>
   ) : (
     <main>
       <div className="searchedIngredient-grid">

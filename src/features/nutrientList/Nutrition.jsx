@@ -5,7 +5,7 @@ import "./nutrition.scss";
 export default function Nutrition() {
   const { data, isLoading } = useGetNutritionQuery();
   return isLoading ? (
-    <h1>Loading ...</h1>
+    <h3>Just a moment ...</h3>
   ) : (
     <>
       <main>

@@ -1,5 +1,4 @@
 import { useGetIngredientQuery } from "../../store/nutritionSlice";
-import { SearchedIngredientDetails } from "./SearchedIngredientDetails";
 import { useState } from "react";
 import "../home/home.scss";
 import { Link } from "react-router-dom";
@@ -8,12 +7,11 @@ export default function SearchResults(searchWords) {
   const searchKey = searchWords.searchWords;
   const [searchInput, setSearchInput] = useState();
   const { data, isLoading } = useGetIngredientQuery(searchKey);
-  console.log(data);
   const handleClick = () => {
     setSearchInput(true);
   };
   return isLoading ? (
-    <div>Loading ...</div>
+    <div>Just a moment ...</div>
   ) : (
     <div>
       <ul className="search-grid">
