@@ -4,9 +4,9 @@ import { Provider } from "react-redux";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Root from "./layout/Root";
 import store from "./store/store.js";
-import Nutrition from "./features/Nutrition.jsx";
-import Home from "./features/Home.jsx";
-import NutritionDetails from "./features/NutritionDetails.jsx";
+import Nutrition from "./features/nutrientList/Nutrition.jsx";
+import Home from "./features/home/Home.jsx";
+import NutritionDetails from "./features/nutrientList/NutritionDetails.jsx";
 
 const router = createBrowserRouter([
   {

@@ -1,6 +1,6 @@
 import { useState } from "react";
-import SearchResults from "./SearchResults";
-import "./Home.scss";
+import SearchResults from "../searchFunction/SearchResults";
+import "./home.scss";
 
 export default function Home() {
   const [searchWords, setSearchWords] = useState("");

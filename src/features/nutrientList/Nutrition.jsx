@@ -1,6 +1,6 @@
-import { useGetNutritionQuery } from "../store/nutritionSlice";
-import FoodNutrients from "./FoodNutritions";
-import "./Nutrition.scss";
+import { useGetNutritionQuery } from "../../store/nutritionSlice";
+import NutritionDetails from "./NutritionDetails";
+import "./nutrition.scss";
 
 export default function Nutrition() {
   const { data, isLoading } = useGetNutritionQuery();
@@ -13,7 +13,7 @@ export default function Nutrition() {
           {data.map((item) => (
             <li key={item.fdcId} className="nutrition-card">
               <h3>{item.description}</h3>
-              <FoodNutrients
+              <NutritionDetails
                 key={item.fdcId}
                 foodNutrients={item.foodNutrients}
               />

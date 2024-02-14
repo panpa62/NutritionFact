@@ -1,4 +1,4 @@
-export default function FoodNutrients({ foodNutrients }) {
+export default function NutritionDetails({ foodNutrients }) {
   if (!foodNutrients) {
     return <p>No nutrient info is available</p>;
   }
