@@ -15,7 +15,7 @@ export default function SearchResults(searchWords) {
   ) : (
     <div>
       <ul className="search-grid">
-        {data.foods?.map((item) => (
+        {data?.foods.map((item) => (
           <li key={item.fdcId} className="search-card">
             <h3>{item.description}</h3>
             <h4>{item.foodCategory}</h4>

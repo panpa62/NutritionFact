@@ -4,10 +4,10 @@ export default function Resources() {
   return (
     <>
       <section className="resources-section1">
-        <p>
+        <h4>
           I would like to express my gratitude to U.S. Department of Agriculture
           for allowing me to utilize their data.
-        </p>
+        </h4>
         <p>
           The primary source of data on this website is from http://USDA.gov.
         </p>
