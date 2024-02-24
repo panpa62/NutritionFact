@@ -7,6 +7,7 @@ export default function SearchResults(searchWords) {
   const searchKey = searchWords.searchWords;
   const [searchInput, setSearchInput] = useState();
   const { data, isLoading } = useGetIngredientQuery(searchKey);
+
   const handleClick = () => {
     setSearchInput(true);
   };

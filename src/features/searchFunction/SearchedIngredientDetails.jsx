@@ -5,6 +5,7 @@ import "./searchIngredient.scss";
 export function SearchedIngredientDetails() {
   const id = useParams();
   const { data, isLoading } = useGetIngredientQuery(id.id);
+  console.log(id);
   const ingredient = data.foods[0];
   //const fdNutrients = data.foods[0].foodNutrients;
   //console.log(fdNutrients);
@@ -12,16 +13,14 @@ export function SearchedIngredientDetails() {
   return isLoading ? (
     <div>Just a moment ...</div>
   ) : (
-    <main>
-      <div className="searchedIngredient-grid">
-        {ingredient?.foodNutrients.map((item) => (
-          <li key={item.fdcId} className="searchedIngredient-card">
-            <p>{item.nutrientName}</p>
-            <p>Amount: {item.value}</p>
-            <p>Unit: {item.unitName}</p>
-          </li>
-        ))}
-      </div>
+    <main className="searchedIngredient-grid">
+      {ingredient?.foodNutrients.map((item) => (
+        <li key={item.fdcId} className="searchedIngredient-card">
+          <p>{item.nutrientName}</p>
+          <p>Amount: {item.value}</p>
+          <p>Unit: {item.unitName}</p>
+        </li>
+      ))}
     </main>
   );
 }
