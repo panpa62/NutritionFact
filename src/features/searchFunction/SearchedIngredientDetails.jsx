@@ -7,8 +7,8 @@ export function SearchedIngredientDetails() {
   const { data, isLoading } = useGetIngredientQuery(id.id);
   console.log(id);
   const ingredient = data.foods[0];
-  //const fdNutrients = data.foods[0].foodNutrients;
-  //console.log(fdNutrients);
+  const fdNutrients = data.foods[0].foodNutrients;
+  console.log(fdNutrients);
   console.log(ingredient);
   return isLoading ? (
     <div>Just a moment ...</div>
